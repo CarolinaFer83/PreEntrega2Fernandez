@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Turnos y Pagos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+        input, select, button {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+        #mensaje, #orden {
+            color: red;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f4f4f4;
+            margin-bottom: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Solicitar Turno</h1>
+
+    <!-- Formulario para ingresar los datos del turno -->
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+
+    <label for="tramite">Tipo de Trámite:</label>
+    <select id="tramite">
+        <option value="comun">Común - $100</option>
+        <option value="urgente">Urgente - $200</option>
+        <option value="online">Online - $50</option>
+    </select>
+
+    <button id="solicitar-turno">Solicitar Turno</button>
+
+    <p id="mensaje"></p>
+
+    <!-- Sección para el pago -->
+    <div id="pago" style="display: none;">
+        <h2>Generar Pago</h2>
+        <p>Debe realizar un pago de <span id="monto-pago"></span>.</p>
+        <button id="realizar-pago">Realizar Pago</button>
+    </div>
+
+    <!-- Orden generada -->
+    <div id="orden" style="display: none;">
+        <h2>Orden Generada</h2>
+        <p>Orden de pago: <span id="numero-orden"></span></p>
+        <p>Detalles del turno:</p>
+        <ul id="detalles-orden"></ul>
+    </div>
+
+    <h2>Lista de Turnos</h2>
+    <ul id="lista-turnos"></ul>
+
+    <script src="./JS.Entrega1.js"></script>
+</body>
+</html>
